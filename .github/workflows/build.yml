@@ -4,14 +4,14 @@ jobs:
 Explorando-GitHub-Actions:
 runs-on: ubuntu-lastest
 steps:
--run: echo "el flujo de trabajo ha sido ejecutado en el evento: ${{github.event_name}}"
--run: echo "el trabajo esta siendo ejecutado en un servidor  ${{ runner.os }} hospedado en GitHub"
--run: echo "el nombre de la rama es: ${{ github.ref}} y tu repositorio es: ${{ github.repository}}."
-- name: Verifica el codigo del repositorio
+run: echo "el flujo de trabajo ha sido ejecutado en el evento: ${{github.event_name}}"
+run: echo "el trabajo esta siendo ejecutado en un servidor  ${{ runner.os }} hospedado en GitHub"
+run: echo "el nombre de la rama es: ${{ github.ref}} y tu repositorio es: ${{ github.repository}}."
+name: Verifica el codigo del repositorio
 uses: actions/checkout@v2
--run: echo "el repositorio: ${{github.repository}} ha sido clonado al runner."
--run: echo " el flujo de trabajo esta listo para verificar el codigo en el runner."
--name: Listar archivos en el repositorio
+run: echo "el repositorio: ${{github.repository}} ha sido clonado al runner."
+run: echo " el flujo de trabajo esta listo para verificar el codigo en el runner."
+name: Listar archivos en el repositorio
 run:
-1s ${{github.workspace}}
--run: echo " el estado del trabajo es: ${{job.status}}."
+${{github.workspace}}
+run: echo " el estado del trabajo es: ${{job.status}}."
